@@ -18,21 +18,21 @@ class Solution {
         // }
         // return false;
 
-        // Set<Integer> s = new HashSet<>();
-        // for(int i = 0 ; i < nums.length ; i++){
-        //    if(!s.add(nums[i])){
-        //        return true;
-        //    }
-        // }
-        // return false;
-
         Set<Integer> s = new HashSet<>();
-        for(int n : nums){
-           if(s.contains(n)){
+        for(int i = 0 ; i < nums.length ; i++){
+           if(!s.add(nums[i])){
                return true;
            }
-           s.add(n);
         }
         return false;
+
+        // Set<Integer> s = new HashSet<>();
+        // for(int n : nums){
+        //    if(s.contains(n)){
+        //        return true;
+        //    }
+        //    s.add(n);
+        // }
+        // return false;
     }
 }
