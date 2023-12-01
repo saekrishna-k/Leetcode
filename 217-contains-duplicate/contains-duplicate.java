@@ -11,8 +11,8 @@ class Solution {
         // return false;
 
         Arrays.sort(nums);
-        int n = nums.length;
-        for (int i = 1; i < n; i++) {
+        int l = nums.length;
+        for (int i = 1; i < l; i++) {
             if (nums[i] == nums[i - 1])
                 return true;
         }
