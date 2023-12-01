@@ -10,13 +10,13 @@ class Solution {
         // }
         // return false;
 
-        Arrays.sort(nums);
-        int l = nums.length;
-        for (int i = 1; i < l; i++) {
-            if (nums[i] == nums[i - 1])
-                return true;
-        }
-        return false;
+        // Arrays.sort(nums);
+        // int l = nums.length;
+        // for (int i = 1; i < l; i++) {
+        //     if (nums[i] == nums[i - 1])
+        //         return true;
+        // }
+        // return false;
 
         // Set<Integer> s = new HashSet<>();
         // for(int i = 0 ; i < nums.length ; i++){
@@ -25,5 +25,14 @@ class Solution {
         //    }
         // }
         // return false;
+
+        Set<Integer> s = new HashSet<>();
+        for(int n : nums){
+           if(s.contains(n)){
+               return true;
+           }
+           s.add(n);
+        }
+        return false;
     }
 }
