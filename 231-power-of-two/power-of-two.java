@@ -25,5 +25,8 @@ class Solution {
 
         if(n==0) return false;
         return ((n==1) || (n%2==0 && isPowerOfTwo(n/2)));
+
+        //  if(n <= 0) return false;
+        //  return Math.ceil(Math.log(n)) == Math.floor(Math.log(n));
     }
 }
