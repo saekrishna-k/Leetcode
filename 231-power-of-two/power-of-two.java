@@ -15,7 +15,6 @@ class Solution {
             }else{
                 n /= 2;
             }
-            System.out.println(n);
         }
         return true;
     }
