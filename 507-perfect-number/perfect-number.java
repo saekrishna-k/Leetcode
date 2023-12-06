@@ -1,4 +1,5 @@
 class Solution {
+
     public boolean checkPerfectNumber(int num) {
         // int s = 0;
         // int n = num / 2;
@@ -9,12 +10,12 @@ class Solution {
         // }
         // return s == num;
 
-        if(num == 1) return false;
+        if (num == 1) return false;
         int s = 1;
-        int n = num / 2;
-        for(int i = 2 ; i <= n ; i++){
-            if(num % i == 0){
-                s += i;
+        int n = (int) Math.sqrt(num);
+        for (int i = 2; i <= n; i++) {
+            if (num % i == 0) {
+                s += i + num / i;
             }
         }
         return s == num;
