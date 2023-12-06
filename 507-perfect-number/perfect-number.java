@@ -7,10 +7,6 @@ class Solution {
                 s += i;
             }
         }
-        if(s == num){
-            return true;
-        }else{
-            return false;
-        }
+        return s == num;
     }
 }
