@@ -1,7 +1,6 @@
 class Solution {
 
     public boolean detectCapitalUse(String word) {
-        int c = 1;
         if (word.charAt(0) >= 'a') {
             for (int i = 1; i < word.length(); i++) {
                 if (word.charAt(i) >= 'A' && word.charAt(i) <= 'Z') {
@@ -9,6 +8,7 @@ class Solution {
                 }
             }
         } else {
+            int c = 1;
             for (int i = 1; i < word.length(); i++) {
                 if (word.charAt(i) < 'a') {
                     c++;
