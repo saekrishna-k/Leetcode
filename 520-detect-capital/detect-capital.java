@@ -12,7 +12,6 @@ class Solution {
             for (int i = 1; i < word.length(); i++) {
                 if (word.charAt(i) < 'a') {
                     c++;
-                    System.out.println(c);
                 }
             }
             if (c > 1 && c < word.length()) {
