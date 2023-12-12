@@ -1,44 +1,41 @@
 class Solution {
 
     public boolean halvesAreAlike(String s) {
-        int l = s.length();
-        String a = s.substring(0, l / 2);
-        String b = s.substring(l / 2, l);
-        int i = 0, j = 0;
-        int a1 = 0, b1 = 0;
-        while (i < l / 2 ) {
+        int i = 0, j = s.length() / 2;
+        int a = 0, b = 0;
+        while (i < s.length() / 2) {
             if (
-                a.charAt(i) == 'a' ||
-                a.charAt(i) == 'e' ||
-                a.charAt(i) == 'i' ||
-                a.charAt(i) == 'o' ||
-                a.charAt(i) == 'u' ||
-                a.charAt(i) == 'A' ||
-                a.charAt(i) == 'E' ||
-                a.charAt(i) == 'I' ||
-                a.charAt(i) == 'O' ||
-                a.charAt(i) == 'U'
+                s.charAt(i) == 'a' ||
+                s.charAt(i) == 'e' ||
+                s.charAt(i) == 'i' ||
+                s.charAt(i) == 'o' ||
+                s.charAt(i) == 'u' ||
+                s.charAt(i) == 'A' ||
+                s.charAt(i) == 'E' ||
+                s.charAt(i) == 'I' ||
+                s.charAt(i) == 'O' ||
+                s.charAt(i) == 'U'
             ) {
-                a1++;
+                a++;
             }
 
             if (
-                b.charAt(j) == 'a' ||
-                b.charAt(j) == 'e' ||
-                b.charAt(j) == 'i' ||
-                b.charAt(j) == 'o' ||
-                b.charAt(j) == 'u' ||
-                b.charAt(j) == 'A' ||
-                b.charAt(j) == 'E' ||
-                b.charAt(j) == 'I' ||
-                b.charAt(j) == 'O' ||
-                b.charAt(j) == 'U'
+                s.charAt(j) == 'a' ||
+                s.charAt(j) == 'e' ||
+                s.charAt(j) == 'i' ||
+                s.charAt(j) == 'o' ||
+                s.charAt(j) == 'u' ||
+                s.charAt(j) == 'A' ||
+                s.charAt(j) == 'E' ||
+                s.charAt(j) == 'I' ||
+                s.charAt(j) == 'O' ||
+                s.charAt(j) == 'U'
             ) {
-                b1++;
+                b++;
             }
             j++;
             i++;
         }
-        return a1 == b1 ? true : false;
+        return a == b ? true : false;
     }
 }
