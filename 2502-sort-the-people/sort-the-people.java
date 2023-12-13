@@ -14,32 +14,27 @@ class Solution {
 
         //  String[] res = new String[names.length];
         // int[] indexOfNames = new int[100001];
-        
+
         // for(int i = 0; i < heights.length; i++){
         //     indexOfNames[heights[i]] = i;
         // }
-            
+
         // Arrays.sort(heights);
-        
+
         // for(int i = 0; i < heights.length; i++){
-        //     res[heights.length - i - 1] = names[indexOfNames[heights[i]]];        
+        //     res[heights.length - i - 1] = names[indexOfNames[heights[i]]];
         // }
-        
-        // return res;    
 
-         String[] result = new String[names.length];
-      
-    TreeMap < Integer, String > map = new TreeMap < > (Collections.reverseOrder());
+        // return res;
 
-    for (int i = 0; i < names.length; i++) {
-      map.put(heights[i], names[i]);           // Heights in descending order
-    }
-
-    int i = 0;
-    for (int h: map.keySet()) {
-      result[i++] = map.get(h);               // Iterate TreeMap
-    }
-
-    return result;
+        TreeMap<Integer, String> map = new TreeMap<>(Collections.reverseOrder());
+        for (int i = 0; i < names.length; i++) {
+            map.put(heights[i], names[i]);
+        }
+        int i = 0;
+        for (int h : map.keySet()) {
+            names[i++] = map.get(h);
+        }
+        return names;
     }
 }
