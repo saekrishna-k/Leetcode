@@ -38,10 +38,28 @@ class Solution {
         // for (String w : count.keySet()) if (count.get(w) == 1) res.add(w);
         // return res.toArray(new String[0]);
 
-        Map<String, Integer> count = new HashMap<>();
-        for (String s : (s1 + " " + s2).split("\\s")) {
-            count.put(s, count.getOrDefault(s, 0) + 1);
+        // Map<String, Integer> count = new HashMap<>();
+        // for (String s : (s1 + " " + s2).split("\\s")) {
+        //     count.put(s, count.getOrDefault(s, 0) + 1);
+        // }
+        // return count.entrySet().stream().filter(e -> e.getValue() == 1).map(e -> e.getKey()).toArray(String[]::new);
+
+        Set<String> unique = new HashSet<>();
+        Set<String> words = new HashSet<>();
+
+        for (String s : (s1 + " " + s2).split(" ")) {
+            if (words.contains(s)) {
+                unique.remove(s);
+            } else {
+                words.add(s);
+                unique.add(s);
+            }
         }
-        return count.entrySet().stream().filter(e -> e.getValue() == 1).map(e -> e.getKey()).toArray(String[]::new);
+        String[] r = new String[unique.size()];
+        int c = 0;
+        for (String s : unique) {
+            r[c++] = s;
+        }
+        return r;
     }
 }
