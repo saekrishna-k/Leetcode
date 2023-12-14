@@ -44,22 +44,49 @@ class Solution {
         // }
         // return count.entrySet().stream().filter(e -> e.getValue() == 1).map(e -> e.getKey()).toArray(String[]::new);
 
-        Set<String> unique = new HashSet<>();
-        Set<String> words = new HashSet<>();
+        // Set<String> unique = new HashSet<>();
+        // Set<String> words = new HashSet<>();
 
-        for (String s : (s1 + " " + s2).split(" ")) {
-            if (words.contains(s)) {
-                unique.remove(s);
+        // for (String s : (s1 + " " + s2).split(" ")) {
+        //     if (words.contains(s)) {
+        //         unique.remove(s);
+        //     } else {
+        //         words.add(s);
+        //         unique.add(s);
+        //     }
+        // }
+        // String[] r = new String[unique.size()];
+        // int c = 0;
+        // for (String s : unique) {
+        //     r[c++] = s;
+        // }
+        // return r;
+
+        String[] splitS1 = s1.split(" ");
+        String[] splitS2 = s2.split(" ");
+        Set<String> words = new HashSet<>();
+        Set<String> unique = new HashSet<>();
+        for (String word : splitS1) {
+            if (words.contains(word)) {
+                unique.remove(word);
             } else {
-                words.add(s);
-                unique.add(s);
+                words.add(word);
+                unique.add(word);
             }
         }
-        String[] r = new String[unique.size()];
-        int c = 0;
-        for (String s : unique) {
-            r[c++] = s;
+        for (String word : splitS2) {
+            if (words.contains(word)) {
+                unique.remove(word);
+            } else {
+                words.add(word);
+                unique.add(word);
+            }
         }
-        return r;
+        String[] res = new String[unique.size()];
+        int count = 0;
+        for (String word : unique) {
+            res[count++] = word;
+        }
+        return res;
     }
 }
