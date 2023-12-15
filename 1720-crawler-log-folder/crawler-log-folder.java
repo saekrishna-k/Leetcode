@@ -13,6 +13,6 @@ class Solution {
                     c++;
             }
         }
-        return c > 0 ? c : 0;
+        return c;
     }
 }
