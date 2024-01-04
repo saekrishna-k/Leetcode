@@ -15,7 +15,16 @@ class Solution {
         // }
         // return -1;
 
-        int sum = n * (n + 1) / 2, x = (int)Math.sqrt(sum);
-        return x * x == sum ? x : -1;
+        //SQRT
+        // int sum = n * (n + 1) / 2, x = (int)Math.sqrt(sum);
+        // return x * x == sum ? x : -1;
+
+        //Binary Search
+        int l = 1, r = n, sum = n * (n + 1) / 2;
+        while (l < r) {
+            int m = (l + r) / 2;
+            if (m * m - sum < 0) l = m + 1; else r = m;
+        }
+        return l * l - sum == 0 ? l : -1;
     }
 }
