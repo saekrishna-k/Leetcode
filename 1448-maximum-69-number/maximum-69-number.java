@@ -34,10 +34,8 @@ class Solution {
                 ch[i] = '9';
                 break;
             }
-
             i++;
         }
-        String ans = new String(ch);
-        return Integer.valueOf(ans);
+        return Integer.valueOf(new String(ch));
     }
 }
