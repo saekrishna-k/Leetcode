@@ -26,8 +26,7 @@ class Solution {
         // str = str.replaceFirst("6", "9");
         // return Integer.parseInt(str);
 
-        String temp = Integer.toString(num);
-        char ch[] = temp.toCharArray();
+        char ch[] = Integer.toString(num).toCharArray();
         int i = 0;
         for (char c : ch) {
             if (c == '6') {
