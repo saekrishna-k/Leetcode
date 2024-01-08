@@ -15,8 +15,15 @@ class Solution {
         // }
         // return Integer.parseInt(s1);
 
-        String str = Integer.toString(num);
-        str = str.replaceFirst("6", "9");
-        return Integer.parseInt(str);
+        String numStr = String.valueOf(num);
+        int first6Idx = numStr.indexOf("6");
+        if (first6Idx == -1) {
+            return num;
+        }
+        return Integer.valueOf(numStr.substring(0, first6Idx) + 9 + numStr.substring(first6Idx + 1));
+
+        // String str = Integer.toString(num);
+        // str = str.replaceFirst("6", "9");
+        // return Integer.parseInt(str);
     }
 }
