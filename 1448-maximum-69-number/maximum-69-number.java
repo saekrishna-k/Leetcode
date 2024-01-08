@@ -14,6 +14,7 @@ class Solution {
             }
         }
         return Integer.parseInt(s1);
+        
         // String numStr = String.valueOf(num);
         // int first6Idx = numStr.indexOf("6");
         // if (first6Idx == -1) {
