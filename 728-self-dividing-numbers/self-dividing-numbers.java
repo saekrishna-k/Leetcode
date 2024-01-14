@@ -4,16 +4,14 @@ class Solution {
         List<Integer> r = new ArrayList<>();
         for (int i = left; i <= right; i++) {
             int n = i;
-            boolean flag = false;
             while (n != 0) {
                 int j = n % 10;
                 if (j == 0 || i % j != 0) {
-                    flag = !flag;
                     break;
                 }
                 n = n / 10;
             }
-            if (!flag) {
+            if (n == 0) {
                 r.add(i);
             }
         }
