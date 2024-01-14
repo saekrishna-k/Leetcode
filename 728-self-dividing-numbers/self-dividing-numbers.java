@@ -7,10 +7,7 @@ class Solution {
             boolean flag = false;
             while (n != 0) {
                 int j = n % 10;
-                if (j == 0) {
-                    flag = !flag;
-                    break;
-                } else if (j != 0 && i % j != 0) {
+                if (j == 0 || i % j != 0) {
                     flag = !flag;
                     break;
                 }
