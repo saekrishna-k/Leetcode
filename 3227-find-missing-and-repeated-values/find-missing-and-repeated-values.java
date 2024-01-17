@@ -15,6 +15,7 @@ class Solution {
         for (int i = 1; i <= n * n; i++) {
             if (!s.contains(i)) {
                 missingNum = i;
+                break;
             }
         }
         return new int[] { repeatedNum, missingNum };
