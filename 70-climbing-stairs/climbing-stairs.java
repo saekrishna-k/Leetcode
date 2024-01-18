@@ -14,7 +14,7 @@ class Solution {
         // return dp[n];
 
         int a = 1, b = 1;
-        for(int i = 1 ; i <= n - 1 ; i++){
+        for (int i = 1; i <= n - 1; i++) {
             int temp = a;
             a = a + b;
             b = temp;
