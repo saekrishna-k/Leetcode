@@ -10,12 +10,19 @@ class Solution {
             i++;
         }
         Arrays.sort(n);
-        for (int j = 0; j < n.length; j = j + 2) {
-            num1 = num1 * 10 + n[j];
+        for (int j = 0; j < n.length; j++) {
+            if (j % 2 == 0) {
+                num1 = num1 * 10 + n[j];
+            } else {
+                num2 = num2 * 10 + n[j];
+            }
         }
-        for (int j = 1; j < n.length; j = j + 2) {
-            num2 = num2 * 10 + n[j];
-        }
+        // for (int j = 0; j < n.length; j = j + 2) {
+        //     num1 = num1 * 10 + n[j];
+        // }
+        // for (int j = 1; j < n.length; j = j + 2) {
+        //     num2 = num2 * 10 + n[j];
+        // }
         return num1 + num2;
     }
 }
