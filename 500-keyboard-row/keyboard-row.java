@@ -21,6 +21,9 @@ class Solution {
                 if (thirdRow.indexOf(c) != -1) {
                     isThirdRow = true;
                 }
+                if (isFirstRow && isSecondRow && isThirdRow) {
+                    break;
+                }
             }
 
             if ((isFirstRow && !isSecondRow && !isThirdRow) || (!isFirstRow && isSecondRow && !isThirdRow) || (!isFirstRow && !isSecondRow && isThirdRow)) {
