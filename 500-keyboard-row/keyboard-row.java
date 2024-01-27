@@ -1,20 +1,33 @@
 class Solution {
 
     public String[] findWords(String[] words) {
-        List<String> a = new ArrayList<>();
+        String firstRow = "qwertyuiop";
+        String secondRow = "asdfghjkl";
+        String thirdRow = "zxcvbnm";
+        List<String> res = new ArrayList<String>();
+        boolean isFirstRow = false, isSecondRow = false, isThirdRow = false;
         for (int i = 0; i < words.length; i++) {
-            boolean flag = false;
-            if (words[i].toLowerCase().matches("[qwertyuiop]+")) {
-                flag = true;
+            isFirstRow = false;
+            isSecondRow = false;
+            isThirdRow = false;
+            for (int j = 0; j < words[i].length(); j++) {
+                Character c = Character.toLowerCase(words[i].charAt(j));
+                if (firstRow.indexOf(c) != -1) {
+                    isFirstRow = true;
+                }
+                if (secondRow.indexOf(c) != -1) {
+                    isSecondRow = true;
+                }
+                if (thirdRow.indexOf(c) != -1) {
+                    isThirdRow = true;
+                }
             }
-            if (words[i].toLowerCase().matches("[asdfghjkl]+")) {
-                flag = true;
+
+            if ((isFirstRow && !isSecondRow && !isThirdRow) || (!isFirstRow && isSecondRow && !isThirdRow) || (!isFirstRow && !isSecondRow && isThirdRow)) {
+                res.add(words[i]);
             }
-            if (words[i].toLowerCase().matches("[zxcvbnm]+")) {
-                flag = true;
-            }
-            if (flag) a.add(words[i]);
         }
-        return a.toArray(new String[a.size()]);
+
+        return res.toArray(new String[res.size()]);
     }
 }
