@@ -1,5 +1,4 @@
 class Solution {
-
     public String removeTrailingZeros(String num) {
         // BigInteger bn = new BigInteger(Long.parseLong(num));
         // // long n = Long.parseLong(num);
@@ -19,10 +18,10 @@ class Solution {
         //         break;
         //     }
         // }
-        int l = num.length() - 1;
-        while (l >= 0 && num.charAt(l) == '0') {
+        int  l = num.length() - 1;
+        while( l>= 0 && num.charAt(l) == '0'){
             l--;
         }
-        return num.substring(0, l + 1);
+        return num.substring(0, l+1); 
     }
 }
