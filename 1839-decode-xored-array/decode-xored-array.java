@@ -5,7 +5,7 @@ class Solution {
         int[] result = new int[n + 1];
         result[0] = first;
         for (int i = 0; i < n; i++) {
-            result[i + 1] = encoded[i] ^ result[i];
+            result[i + 1] = result[i] ^ encoded[i];
         }
         return result;
     }
