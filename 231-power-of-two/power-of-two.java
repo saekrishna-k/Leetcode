@@ -23,9 +23,13 @@ class Solution {
         // while(n%2 == 0) n/=2;
         // return n == 1;
 
-        if (n == 0) return false;
-        return ((n == 1) || (n % 2 == 0 && isPowerOfTwo(n / 2)));
+        // if(n==0) return false;
+        // return ((n==1) || (n%2==0 && isPowerOfTwo(n/2)));
+
         //  if(n <= 0) return false;
         //  return Math.ceil(Math.log(n)) == Math.floor(Math.log(n));
+
+        if (n <= 0) return false;
+        return ((n & (n - 1)) == 0);
     }
 }
