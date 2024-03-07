@@ -9,6 +9,7 @@
  * }
  */
 class Solution {
+
     public ListNode middleNode(ListNode head) {
         // ListNode temp = head;
         // int size = 0;
@@ -25,7 +26,7 @@ class Solution {
         //     i++;
         // }
         // return r;
-        
+
         // ListNode[] A = new ListNode[100];
         // int t = 0;
         // while (head != null) {
@@ -33,7 +34,7 @@ class Solution {
         //     head = head.next;
         // }
         // return A[t / 2];
-        
+
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
