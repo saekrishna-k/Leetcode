@@ -5,7 +5,7 @@ class Solution {
         for (int i : nums) {
             if (i % 2 == 0) {
                 count++;
-                if (count >= 2) {
+                if (count == 2) {
                     return true;
                 }
             }
