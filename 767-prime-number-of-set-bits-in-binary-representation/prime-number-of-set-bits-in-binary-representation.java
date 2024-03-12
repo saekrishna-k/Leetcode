@@ -15,14 +15,12 @@ class Solution {
         prime.add(29);
         prime.add(31);
         for (int i = left; i <= right; i++) {
-            if (prime.contains(countBits(i))) {
+            // if (prime.contains(countBits(i))) {
+            //     result++;
+            // }
+            if (isprime(countBits(i))) {
                 result++;
             }
-            // if (n <= 1) return false;
-            // for (int i = 2; i < Math.sqrt(n); i++) {
-            //     if (n % i == 0) return false;
-            // }
-            // return true;
         }
         return result;
     }
@@ -38,5 +36,17 @@ class Solution {
             count++;
         }
         return count;
+    }
+
+    private static boolean isprime(int n) {
+        if (n == 1) {
+            return false;
+        }
+        for (int j = 2; j <= Math.sqrt(n); j++) {
+            if (n % j == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
