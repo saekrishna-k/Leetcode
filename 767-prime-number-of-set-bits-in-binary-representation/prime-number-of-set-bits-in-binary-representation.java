@@ -42,7 +42,8 @@ class Solution {
         if (n == 1) {
             return false;
         }
-        for (int j = 2; j <= Math.sqrt(n); j++) {
+        int a = (int) Math.sqrt(n);
+        for (int j = 2; j <= a; j++) {
             if (n % j == 0) {
                 return false;
             }
