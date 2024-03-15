@@ -17,7 +17,7 @@ class Solution {
                 result[i] = 0;
             } else if (nums[i] == 0) {
                 result[i] = product;
-            } else if (count == 1 && count != l) {
+            } else if (count == 1) {
                 result[i] = 0;
             } else {
                 result[i] = product / nums[i];
