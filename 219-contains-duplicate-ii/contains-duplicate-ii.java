@@ -16,14 +16,13 @@ class Solution {
             return false;
         }
 
-        HashSet<Integer> window = new HashSet<>();
-        for (int i = 0; i < l; i++) {
-            if (i > k) {
-                window.remove(nums[i - k - 1]);
-            }
-            if (!window.add(nums[i])) {
+        Set<Integer> slidingWindow = new HashSet<>();
+        for (int index = 0; index < l; index++) {
+            if (slidingWindow.contains(nums[index])) 
                 return true;
-            }
+            if (index >= k) 
+                slidingWindow.remove(nums[index - k]);
+            slidingWindow.add(nums[index]);
         }
         return false;
     }
