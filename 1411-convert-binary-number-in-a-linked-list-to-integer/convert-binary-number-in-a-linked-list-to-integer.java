@@ -33,9 +33,8 @@ class Solution {
         while (head != null) {
             // result = result << 1;
             result = result * 2;
-            System.out.print(result);
+            // result = result | head.val;
             result = result + head.val;
-            System.out.println(result);
             head = head.next;
         }
         return result;
