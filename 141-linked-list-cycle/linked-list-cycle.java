@@ -23,10 +23,9 @@ public class Solution {
         Set<ListNode> hash = new HashSet<>();
         ListNode temp = head;
         while (temp != null) {
-            if (hash.contains(temp)) {
+            if (!hash.add(temp)) {
                 return true;
             }
-            hash.add(temp);
             temp = temp.next;
         }
         return false;
