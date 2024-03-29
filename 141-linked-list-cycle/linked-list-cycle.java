@@ -20,13 +20,10 @@ public class Solution {
         // }
         // return false;
 
-        Set<ListNode> hash = new HashSet<>();
-        ListNode temp = head;
-        while (temp != null) {
-            if (!hash.add(temp)) {
-                return true;
-            }
-            temp = temp.next;
+        Set<ListNode> set = new HashSet<>();
+        while (head != null) {
+            if (!set.add(head)) return true;
+            head = head.next;
         }
         return false;
     }
