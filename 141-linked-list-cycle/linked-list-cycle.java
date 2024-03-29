@@ -20,9 +20,9 @@ public class Solution {
         // }
         // return false;
 
-        Set<ListNode> set = new HashSet<>();
+        Set<ListNode> hash = new HashSet<>();
         while (head != null) {
-            if (!set.add(head)) return true;
+            if (!hash.add(head)) return true;
             head = head.next;
         }
         return false;
