@@ -1,20 +1,17 @@
 class Solution {
-    public int lengthOfLastWord(String s) {
-        // String[] str = s.split(" ");
-        // return str[str.length - 1].length();
 
-        int c = 0;
-        int l = s.length() - 1;
+    public int lengthOfLastWord(String s) {
+        int l = s.length() - 1, result = 0;
         boolean flag = false;
-        for(int i = l ; i > -1 ; i--){
-            if(s.charAt(i) == ' ' && flag){
+        for (int i = l; i > -1; i--) {
+            if (s.charAt(i) == ' ' && flag) {
                 break;
             }
-            if(s.charAt(i) != ' '){
+            if (s.charAt(i) != ' ') {
                 flag = true;
-                c++;
+                result++;
             }
         }
-        return c;
+        return result;
     }
 }
