@@ -14,6 +14,9 @@ class Solution {
         // }
         // return result;
 
+        // String[] str = s.split(" ");
+        // return str[str.length - 1].length();
+
         int l = s.length() - 1, result = 0;
         for (int i = l; i > -1; i--) {
             if (s.charAt(i) != ' ') {
