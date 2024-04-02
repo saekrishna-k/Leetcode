@@ -17,16 +17,16 @@ class Solution {
         // }
         // return true;
 
-        int map1[] = new int[200];
-        int map2[] = new int[200];
+        int smap[] = new int[200];
+        int tmap[] = new int[200];
         int sl = s.length();
         for (int i = 0; i < sl; i++) {
             char sc = s.charAt(i), tc = t.charAt(i);
-            if (map1[sc] != map2[tc]) {
+            if (smap[sc] != tmap[tc]) {
                 return false;
             }
-            map1[sc] = i + 1;
-            map2[tc] = i + 1;
+            smap[sc] = i + 1;
+            tmap[tc] = i + 1;
         }
         return true;
     }
