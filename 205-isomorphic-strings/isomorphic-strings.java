@@ -5,7 +5,6 @@ class Solution {
         int sl = s.length();
         for (int i = 0; i < sl; i++) {
             char sc = s.charAt(i), tc = t.charAt(i);
-
             if (m.containsKey(sc)) {
                 if (m.get(sc) != tc) {
                     return false;
