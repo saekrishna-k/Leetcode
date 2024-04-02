@@ -17,8 +17,8 @@ class Solution {
         // }
         // return true;
 
-        int smap[] = new int[200];
-        int tmap[] = new int[200];
+        int smap[] = new int[256];
+        int tmap[] = new int[256];
         int sl = s.length();
         for (int i = 0; i < sl; i++) {
             char sc = s.charAt(i), tc = t.charAt(i);
