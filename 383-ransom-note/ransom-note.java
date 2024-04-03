@@ -13,13 +13,20 @@ class Solution {
         // }
         // return true;
 
-        int index = 0;
-        int[] count = new int[26];
+        // int index = 0;
+        // int[] count = new int[26];
+        // for (char c : ransomNote.toCharArray()) {
+        //     index = magazine.indexOf(c, count[c % 26]);
+        //     if (index == -1) return false;
+        //     count[c % 26] = index + 1;
+        // }
+        // return true;
 
+        int[] count = new int[26];
         for (char c : ransomNote.toCharArray()) {
-            index = magazine.indexOf(c, count[c % 26]);
+            int index = magazine.indexOf(c, count[c - 'a']);
             if (index == -1) return false;
-            count[c % 26] = index + 1;
+            count[c - 'a'] = index + 1;
         }
         return true;
     }
