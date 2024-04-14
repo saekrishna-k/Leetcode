@@ -42,7 +42,7 @@ class Solution {
             || (
                 differences == 2 
                 && s1.charAt(index1) == s2.charAt(index2) 
-                && s2.charAt(index1) == s1.charAt(index2)
+                && s1.charAt(index2) == s2.charAt(index1)
             );
     }
 }
