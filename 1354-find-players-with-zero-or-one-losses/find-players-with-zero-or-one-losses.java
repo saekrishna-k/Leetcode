@@ -18,6 +18,7 @@ class Solution {
 
         List<Integer> zeroLoss = new ArrayList<>();
         List<Integer> oneLoss = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
 
         for (int i = 0; i < 100001; i++) {
             if (losses[i] == -1) {
@@ -26,6 +27,8 @@ class Solution {
                 oneLoss.add(i);
             }
         }
-        return List.of(zeroLoss, oneLoss);
+        result.add(zeroLoss);
+        result.add(oneLoss);
+        return result;
     }
 }
