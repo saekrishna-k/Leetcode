@@ -2,7 +2,8 @@ class Solution {
 
     public List<List<Integer>> findWinners(int[][] matches) {
         int[] losses = new int[100001];
-        for (int i = 0; i < matches.length; i++) {
+        int l = matches.length;
+        for (int i = 0; i < l; i++) {
             int winner = matches[i][0];
             int loser = matches[i][1];
             if (losses[winner] == 0) {
