@@ -11,19 +11,40 @@
 class Solution {
 
     public boolean isPalindrome(ListNode head) {
-        ListNode fast = head, slow = head;
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
+        // ListNode fast = head, slow = head;
+        // while (fast != null && fast.next != null) {
+        //     fast = fast.next.next;
+        //     slow = slow.next;
+        // }
+        // slow = reverse(slow);
+        // fast = head;
+        // while (slow != null) {
+        //     if (fast.val != slow.val) {
+        //         return false;
+        //     }
+        //     fast = fast.next;
+        //     slow = slow.next;
+        // }
+        // return true;
+
+        if (head == null || head.next == null) {
+            return true;
         }
-        slow = reverse(slow);
-        fast = head;
-        while (slow != null) {
-            if (fast.val != slow.val) {
+
+        ListNode h = head;
+        int[] val = new int[100_000];
+        int size = 0;
+
+        while (h != null) {
+            val[size++] = h.val;
+            h = h.next;
+        }
+
+        int m = size / 2;
+        for (int i = 0; i < m; i++) {
+            if (val[i] != val[--size]) {
                 return false;
             }
-            fast = fast.next;
-            slow = slow.next;
         }
         return true;
     }
