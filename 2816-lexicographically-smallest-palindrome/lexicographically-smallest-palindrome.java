@@ -32,11 +32,9 @@ class Solution {
         while (start < end) {
             if (str[start] != str[end]) {
                 if (str[start] < str[end]) {
-                    str[start] = str[start];
                     str[end] = str[start];
                 } else {
                     str[start] = str[end];
-                    str[end] = str[end];
                 }
             }
             start++;
