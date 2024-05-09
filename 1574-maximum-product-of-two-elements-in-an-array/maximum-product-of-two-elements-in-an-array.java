@@ -31,7 +31,6 @@ class Solution {
             result = Math.max(result, (nums[i] - 1) * (currentmax - 1));
             currentmax = Math.max(currentmax, nums[i]);
         }
-
         return result;
     }
 }
