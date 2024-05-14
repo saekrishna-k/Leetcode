@@ -18,11 +18,9 @@ class Solution {
         }
 
         for (int i = 0; i < l; i = i + 2) {
-            if (i + 1 < l) {
-                int temp = nums[i];
-                nums[i] = nums[i + 1];
-                nums[i + 1] = temp;
-            }
+            int temp = nums[i];
+            nums[i] = nums[i + 1];
+            nums[i + 1] = temp;
         }
         return nums;
     }
