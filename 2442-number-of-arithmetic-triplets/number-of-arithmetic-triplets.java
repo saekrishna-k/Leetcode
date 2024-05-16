@@ -13,14 +13,24 @@ class Solution {
         // }
         // return result;
 
-        int result = 0;
-        boolean[] count = new boolean[201];
+        // int result = 0;
+        // boolean[] count = new boolean[201];
 
-        for (int num : nums) {
-            if (num >= 2 * diff && count[num - diff] && count[num - 2 * diff]) {
+        // for (int num : nums) {
+        //     if (num >= 2 * diff && count[num - diff] && count[num - 2 * diff]) {
+        //         result++;
+        //     }
+        //     count[num] = true;
+        // }
+        // return result;
+
+        Set<Integer> numbers = new HashSet<>();
+        int result = 0;
+        for (int i : nums) {
+            if (numbers.contains(i - diff) && numbers.contains(i - 2 * diff)) {
                 result++;
             }
-            count[num] = true;
+            numbers.add(i);
         }
         return result;
     }
