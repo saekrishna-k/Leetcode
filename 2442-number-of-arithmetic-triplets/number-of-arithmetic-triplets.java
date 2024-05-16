@@ -22,7 +22,6 @@ class Solution {
             }
             count[num] = true;
         }
-
         return result;
     }
 }
