@@ -27,7 +27,7 @@ class Solution {
         Set<Integer> numbers = new HashSet<>();
         int result = 0;
         for (int i : nums) {
-            if (numbers.contains(i - diff) && numbers.contains(i - 2 * diff)) {
+            if (i >= 2 * diff && numbers.contains(i - diff) && numbers.contains(i - 2 * diff)) {
                 result++;
             }
             numbers.add(i);
