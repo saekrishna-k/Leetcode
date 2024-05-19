@@ -15,18 +15,30 @@ class Solution {
         // }
         // return result.stream().mapToInt(Integer::intValue).toArray();
 
-        List<Integer> list = new ArrayList();
-        for (int i = nums.length - 1; i >= 0; i--) {
-            int temp = nums[i];
-            while (temp > 0) {
-                list.add(temp % 10);
-                temp /= 10;
-            }
+        // List<Integer> list = new ArrayList();
+        // for (int i = nums.length - 1; i >= 0; i--) {
+        //     int temp = nums[i];
+        //     while (temp > 0) {
+        //         list.add(temp % 10);
+        //         temp /= 10;
+        //     }
+        // }
+        // int[] result = new int[list.size()];
+        // int index = 0;
+        // for (int i = list.size() - 1; i >= 0; i--) {
+        //     result[index] = list.get(i);
+        //     index++;
+        // }
+        // return result;
+
+        StringBuilder s = new StringBuilder();
+        for (int i : nums) {
+            s.append(i);
         }
-        int[] result = new int[list.size()];
         int index = 0;
-        for (int i = list.size() - 1; i >= 0; i--) {
-            result[index] = list.get(i);
+        int[] result = new int[s.length()];
+        for (char c : s.toString().toCharArray()) {
+            result[index] = c - '0';
             index++;
         }
         return result;
