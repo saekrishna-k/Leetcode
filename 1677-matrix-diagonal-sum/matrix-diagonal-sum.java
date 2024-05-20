@@ -11,13 +11,13 @@ class Solution {
         // }
         // return result;
 
-        int result = 0;
-        for (int i = 0; i < mat.length; i++) {
+        int result = 0, l = mat.length;
+        for (int i = 0; i < l; i++) {
             //pd
             result += mat[i][i];
             //sd
-            if (i != mat.length - 1 - i) {
-                result += mat[i][mat.length - 1 - i];
+            if (i != l - 1 - i) {
+                result += mat[i][l - 1 - i];
             }
         }
         return result;
