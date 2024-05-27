@@ -1,8 +1,8 @@
 class Solution {
 
     public int specialArray(int[] nums) {
-        int count;
-        for (int i = 0; i <= nums.length; i++) {
+        int count, n = nums.length;
+        for (int i = 0; i <= n; i++) {
             count = 0;
             for (int j : nums) {
                 if (j >= i) {
