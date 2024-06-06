@@ -15,21 +15,17 @@ class Solution {
         for (int height : heights) {
             frequency[height]++;
         }
-
         int count = 0;
         int curHeight = 0;
-
         for (int i = 0; i < heights.length; i++) {
             while (frequency[curHeight] == 0) {
                 curHeight++;
             }
-
             if (curHeight != heights[i]) {
                 count++;
             }
             frequency[curHeight]--;
         }
-
         return count;
     }
 }
