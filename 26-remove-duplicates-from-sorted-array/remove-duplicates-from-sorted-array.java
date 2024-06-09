@@ -9,6 +9,7 @@ class Solution {
             }
         }
         return index;
+
         
         // int prev = 0;
         // for (int i = 1; i < nums.length; i++) {
