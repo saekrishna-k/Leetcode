@@ -11,6 +11,7 @@ class Solution {
         // }
         // return count;
 
+
         int[] frequency = new int[101];
         for (int height : heights) {
             frequency[height]++;
