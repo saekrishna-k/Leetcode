@@ -9,18 +9,18 @@ class Solution {
         // }
         // return moves;
 
-        int[] pos = new int[101];
+        int[] frequency = new int[101];
         int n = seats.length;
         for (int i = 0; i < n; i++) {
-            pos[seats[i]]++;
-            pos[students[i]]--;
+            frequency[seats[i]]++;
+            frequency[students[i]]--;
         }
-        int res = 0;
+        int result = 0;
         int current = 0;
-        for (int i : pos) {
-            res += Math.abs(current);
+        for (int i : frequency) {
+            result += Math.abs(current);
             current += i;
         }
-        return res;
+        return result;
     }
 }
