@@ -18,6 +18,7 @@ class Solution {
         int result = 0;
         int current = 0;
         for (int i : frequency) {
+            System.out.println(i + " " + current + " " + result);
             result += Math.abs(current);
             current += i;
         }
