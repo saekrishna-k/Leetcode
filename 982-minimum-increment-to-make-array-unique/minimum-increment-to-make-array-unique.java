@@ -1,8 +1,13 @@
 class Solution {
 
     public int minIncrementForUnique(int[] nums) {
-        if (nums == null || nums.length == 0) return 0;
-        int[] frequency = new int[1000000];
+        int n = nums.length;
+        if (nums == null || n == 0) return 0;
+        int max = Integer.MIN_VALUE;
+        for (int i : nums) {
+            max = Math.max(max, i);
+        }
+        int[] frequency = new int[max + n];
         for (int i : nums) {
             frequency[i]++;
         }
