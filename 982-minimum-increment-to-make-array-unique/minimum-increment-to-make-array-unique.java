@@ -20,6 +20,7 @@ class Solution {
             int remain = frequency[i] - 1;
             moves = moves + remain;
             frequency[i + 1] += remain;
+            frequency[i] = 1;
         }
         return moves;
     }
