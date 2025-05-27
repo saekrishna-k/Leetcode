@@ -1,14 +1,14 @@
 class Solution {
-
     public int differenceOfSums(int n, int m) {
-        int s1 = 0, s2 = 0;
+        int ncount = 0;
+        int mcount = 0;
         for (int i = 1; i <= n; i++) {
-            if (i % m != 0) {
-                s1 += i;
+            if (i % m == 0) {
+                ncount += i;
             } else {
-                s2 += i;
+                mcount += i;
             }
         }
-        return (s1 - s2);
+        return mcount - ncount;
     }
 }
