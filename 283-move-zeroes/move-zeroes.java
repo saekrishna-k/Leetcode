@@ -35,30 +35,29 @@ class Solution {
 
 
 
-
-        // int j = 0;
-        // for (int i = 1; i < nums.length; i++) {
-        //     if (nums[i] != 0) {
-        //         int temp = nums[j];
-        //         nums[j] = nums[i];
-        //         nums[i] = temp;
-        //         j++;
-        //     }
-        // }
-
-
-
-
-        int slow = 0;
-        for (int fast = 0; fast < nums.length; fast++) {
-            if (nums[fast] != 0 && nums[slow] == 0) {
-                int temp = nums[slow];
-                nums[slow] = nums[fast];
-                nums[fast] = temp;
-            }
-            if (nums[slow] != 0) {
-                slow++;
+        int i = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != 0) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
             }
         }
+
+
+
+
+        // int slow = 0;
+        // for (int fast = 0; fast < nums.length; fast++) {
+        //     if (nums[fast] != 0 && nums[slow] == 0) {
+        //         int temp = nums[slow];
+        //         nums[slow] = nums[fast];
+        //         nums[fast] = temp;
+        //     }
+        //     if (nums[slow] != 0) {
+        //         slow++;
+        //     }
+        // }
     }
 }
