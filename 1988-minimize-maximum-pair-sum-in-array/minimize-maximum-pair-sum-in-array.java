@@ -5,9 +5,7 @@ class Solution {
         Arrays.sort(nums);
         while (low < high) {
             int sum = nums[low] + nums[high];
-            if (sum > maxSum) {
-                maxSum = sum;
-            }
+            maxSum = Math.max(sum, maxSum);
             low++;
             high--;
         }
