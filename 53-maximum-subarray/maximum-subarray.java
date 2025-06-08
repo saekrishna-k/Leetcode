@@ -11,12 +11,21 @@ class Solution {
         // }
         // return maxSum;
 
+        
+
+        // int maxSum = nums[0], currentSum = nums[0], l = nums.length;
+        // for (int i = 1; i < l; i++) {
+        //     currentSum = Math.max(nums[i], currentSum + nums[i]);
+        //     maxSum = Math.max(maxSum, currentSum);
+        // }
+        // return maxSum;
+
 
 
         int maxSum = nums[0], currentSum = nums[0], l = nums.length;
         for (int i = 1; i < l; i++) {
-            currentSum = Math.max(nums[i], currentSum + nums[i]);
-            maxSum = Math.max(maxSum, currentSum);
+            currentSum = nums[i] > currentSum + nums[i] ? nums[i] : currentSum + nums[i];
+            maxSum = maxSum > currentSum ? maxSum : currentSum;
         }
         return maxSum;
     }
