@@ -21,9 +21,10 @@ public class Solution {
         // return false;
 
         Set<ListNode> hash = new HashSet<>();
-        while (head != null) {
-            if (!hash.add(head)) return true;
-            head = head.next;
+        ListNode current = head;
+        while (current != null) {
+            if (!hash.add(current)) return true;
+            current = current.next;
         }
         return false;
     }
