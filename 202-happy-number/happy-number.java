@@ -16,12 +16,25 @@ class Solution {
         //     }
         // }
 
-        while (n != 1 && !numbers.contains(n)) {
-            numbers.add(n);
-            n = nextValue(n);
+
+
+        // while (n != 1 && !numbers.contains(n)) {
+        //     numbers.add(n);
+        //     n = nextValue(n);
+        // }
+        // return n == 1;
+
+
+
+        int slow = n;
+        int fast = nextValue(n);
+
+        while(fast != 1 && slow != fast){
+            slow = nextValue(slow);
+            fast = nextValue(nextValue(fast));
         }
 
-        return n == 1;
+        return fast == 1;
     }
 
     private int nextValue(int num) {
