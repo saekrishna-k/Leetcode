@@ -1,15 +1,15 @@
 class Solution {
+
     public int removeElement(int[] nums, int val) {
-        int i,l=nums.length,c=0;
-        for(i=0;i<l;i++)
-        {
-            if(nums[i]!=val){
-              nums[c]=nums[i];
-                c++;
-               
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            if (nums[right] != val) {
+                int temp = nums[right];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                left++;
             }
-                
         }
-        return c;
+        return left;
     }
 }
