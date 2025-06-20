@@ -11,9 +11,6 @@ class Solution {
         //     nums[j++] = 0;
         // }
 
-
-
-
         // int index = -1;
         // for(int i = 0 ; i < nums.length ; i++){
         //     if(nums[i] == 0){
@@ -32,8 +29,7 @@ class Solution {
         //     }
         // }
 
-
-
+        
 
         int slow = 0;
         for (int fast = 0; fast < nums.length; fast++) {
@@ -44,8 +40,6 @@ class Solution {
                 slow++;
             }
         }
-
-
 
 
         // int slow = 0;
