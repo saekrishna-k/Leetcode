@@ -18,14 +18,15 @@ class Solution {
 
         // return (count + 1) / 2;
 
-
         
 
         int stackSize = 0;
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
 
-            if (ch == '[') stackSize++; else {
+            if (ch == '[') {
+                stackSize++;
+            } else {
                 if (stackSize > 0) stackSize--;
             }
         }
