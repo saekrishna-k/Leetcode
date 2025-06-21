@@ -1,13 +1,15 @@
 class Solution {
 
     public boolean isStrictlyPalindromic(int n) {
-        for (int base = 2; base <= n - 2; base++) {
-            String s = conversion(n, base);
-            if (!isPalindrome(s)) {
-                return false;
-            }
-        }
-        return true;
+        // for (int base = 2; base <= n - 2; base++) {
+        //     String s = conversion(n, base);
+        //     if (!isPalindrome(s)) {
+        //         return false;
+        //     }
+        // }
+        // return true;
+
+        return false;
     }
 
     private String conversion(int n, int base) {
