@@ -15,21 +15,35 @@ class Solution {
         //         }
         //     }
         // }
-
         // return (count + 1) / 2;
 
         
 
-        int stackSize = 0;
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
+        // int stackSize = 0;
+        // for (int i = 0; i < s.length(); i++) {
+        //     char ch = s.charAt(i);
+        //     if (ch == '[') {
+        //         stackSize++;
+        //     } else {
+        //         if (stackSize > 0) stackSize--;
+        //     }
+        // }
+        // return (stackSize + 1) / 2;
 
-            if (ch == '[') {
-                stackSize++;
+
+
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '[') {
+                stack.push(c);
             } else {
-                if (stackSize > 0) stackSize--;
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
             }
         }
-        return (stackSize + 1) / 2;
+
+        return (stack.size() + 1) / 2;
     }
 }
