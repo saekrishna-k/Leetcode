@@ -2,67 +2,60 @@ class Solution {
 
     public long maximumSubarraySum(int[] nums, int k) {
         // int l = nums.length;
-        // Set<Integer> numbers = new HashSet<>();
+        // if (l < k) return 0;
 
-        // int maxSum = 0, sum = 0;
+        // Map<Integer, Integer> freq = new HashMap<>();
+        // long maxSum = 0, windowSum = 0;
 
         // for (int i = 0; i < k; i++) {
-        //     sum += nums[i];
-        //     if (!numbers.contains(nums[i])) {
-        //         numbers.add(nums[i]);
-        //     }
+        //     windowSum += nums[i];
+        //     freq.put(nums[i], freq.getOrDefault(nums[i], 0) + 1);
         // }
 
-        // maxSum = sum;
-
-        // if (numbers.size() == 1 || numbers.size() == 2) {
-        //     maxSum = 0;
+        // if (freq.size() == k) {
+        //     maxSum = windowSum;
         // }
 
         // for (int i = k; i < l; i++) {
-        //     if (!numbers.contains(nums[i])) {
-        //         sum -= nums[i - k];
-        //         sum += nums[i];
-        //         numbers.add(nums[i]);
-        //         maxSum = sum > maxSum ? sum : maxSum;
+        //     int outgoing = nums[i - k];
+        //     windowSum -= outgoing;
+        //     freq.put(outgoing, freq.get(outgoing) - 1);
+        //     if (freq.get(outgoing) == 0) {
+        //         freq.remove(outgoing);
+        //     }
+
+        //     int incoming = nums[i];
+        //     windowSum += incoming;
+        //     freq.put(incoming, freq.getOrDefault(incoming, 0) + 1);
+
+        //     if (freq.size() == k) {
+        //         maxSum = Math.max(maxSum, windowSum);
         //     }
         // }
         // return maxSum;
 
-        int l = nums.length;
-        if (l < k) return 0;
-
-        Map<Integer, Integer> freq = new HashMap<>();
-        long maxSum = 0, windowSum = 0;
 
         
-        for (int i = 0; i < k; i++) {
-            windowSum += nums[i];
-            freq.put(nums[i], freq.getOrDefault(nums[i], 0) + 1);
-        }
 
-        if (freq.size() == k) {
-            maxSum = windowSum;
-        }
-
-       
-        for (int i = k; i < l; i++) {
-            int outgoing = nums[i - k];
-            windowSum -= outgoing;
-            freq.put(outgoing, freq.get(outgoing) - 1);
-            if (freq.get(outgoing) == 0) {
-                freq.remove(outgoing);
+        Set<Integer> set = new HashSet<>();
+        long sum = 0, maxSum = 0;
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            while (set.contains(nums[right])) {
+                set.remove(nums[left]);
+                sum -= nums[left];
+                left++;
             }
-
-        
-            int incoming = nums[i];
-            windowSum += incoming;
-            freq.put(incoming, freq.getOrDefault(incoming, 0) + 1);
-
-            if (freq.size() == k) {
-                maxSum = Math.max(maxSum, windowSum);
+            set.add(nums[right]);
+            sum += nums[right];
+            if (right - left + 1 == k) {
+                maxSum = Math.max(maxSum, sum);
+                set.remove(nums[left]);
+                sum -= nums[left];
+                left++;
             }
         }
+
         return maxSum;
     }
 }
