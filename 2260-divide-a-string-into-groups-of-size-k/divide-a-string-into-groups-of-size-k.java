@@ -1,4 +1,5 @@
 class Solution {
+
     public String[] divideString(String s, int k, char fill) {
         //  int len=s.length(),size=0,rem=0;
         // if(len%k==0){
@@ -20,20 +21,37 @@ class Solution {
         // }
         // return ans;
 
-          List<String> ans = new ArrayList<>();
-        for(int i=0; i<s.length(); i+=k){
-            StringBuilder as = new StringBuilder("");
-            if(i+k<=s.length()) as.append(s.substring(i, i+k));
-            else as.append(s.substring(i));
-            if(as.length()!=k){
-                for(int j=as.length(); j<k; j++) as.append(fill);
-            }
-            ans.add(as.toString());
+
+
+        // List<String> ans = new ArrayList<>();
+        // for(int i=0; i<s.length(); i+=k){
+        //     StringBuilder as = new StringBuilder("");
+        //     if(i+k<=s.length()) as.append(s.substring(i, i+k));
+        //     else as.append(s.substring(i));
+        //     if(as.length()!=k){
+        //         for(int j=as.length(); j<k; j++) as.append(fill);
+        //     }
+        //     ans.add(as.toString());
+        // }
+        // int n = ans.size();
+        // String[] arr = new String[n];
+        // for(int i=0; i<n; i++){
+        //     arr[i] = ans.get(i);
+        // }
+        // return arr;
+
+
+
+        StringBuilder str = new StringBuilder(s);
+        
+        while (str.length() % k != 0) {
+            str.append(fill);
         }
-        int n = ans.size();
-        String[] arr = new String[n];
-        for(int i=0; i<n; i++){
-            arr[i] = ans.get(i);
+
+        int l = str.length();
+        String arr[] = new String[l / k];
+        for (int i = 0; i < l / k; i++) {
+            arr[i] = str.substring(i * k, (i + 1) * k);
         }
         return arr;
     }
