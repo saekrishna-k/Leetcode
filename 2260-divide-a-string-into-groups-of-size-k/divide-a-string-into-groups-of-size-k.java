@@ -21,7 +21,7 @@ class Solution {
         // }
         // return ans;
 
-
+        
 
         // List<String> ans = new ArrayList<>();
         // for(int i=0; i<s.length(); i+=k){
@@ -43,14 +43,15 @@ class Solution {
 
 
         StringBuilder str = new StringBuilder(s);
-        
+
         while (str.length() % k != 0) {
             str.append(fill);
         }
 
         int l = str.length();
-        String arr[] = new String[l / k];
-        for (int i = 0; i < l / k; i++) {
+        int times = l / k;
+        String arr[] = new String[times];
+        for (int i = 0; i < times; i++) {
             arr[i] = str.substring(i * k, (i + 1) * k);
         }
         return arr;
