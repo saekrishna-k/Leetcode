@@ -1,44 +1,34 @@
 class Solution {
 
     public List<Integer> findAnagrams(String s, String p) {
+        int sl = s.length(), pl = p.length();
         List<Integer> result = new ArrayList<>();
-        int sLen = s.length(), pLen = p.length();
+        if (pl > sl) return result;
 
-        if (sLen < pLen) return result;
+        int[] sfreq = new int[26];
+        int[] pfreq = new int[26];
 
-        // Frequency array for characters in p
-        int[] charCount = new int[26];
-        for (int i = 0; i < pLen; i++) {
-            charCount[p.charAt(i) - 'a']++;
+        for (int i = 0; i < pl; i++) {
+            sfreq[s.charAt(i) - 'a']++;
+            pfreq[p.charAt(i) - 'a']++;
         }
 
-        int left = 0, right = 0, count = pLen;
-
-        while (right < sLen) {
-            // If the character at right is needed, decrement count
-            if (charCount[s.charAt(right) - 'a'] > 0) {
-                count--;
+        for (int i = 0; i <= sl - pl; i++) {
+            if (Arrays.equals(sfreq, pfreq)) {
+                result.add(i);
             }
-            // Decrement the frequency for the current character
-            charCount[s.charAt(right) - 'a']--;
-            right++;
-
-            // When count reaches 0, an anagram is found
-            if (count == 0) {
-                result.add(left);
-            }
-
-            // If window size equals pLen, slide the window
-            if (right - left == pLen) {
-                // If the character at left was part of p, increment count
-                if (charCount[s.charAt(left) - 'a'] >= 0) {
-                    count++;
-                }
-                // Restore the frequency for the character at left
-                charCount[s.charAt(left) - 'a']++;
-                left++;
+            sfreq[s.charAt(i) - 'a']--;
+            if(i + pl != sl){
+                sfreq[s.charAt(i + pl) - 'a']++;
             }
         }
         return result;
+    }
+
+    private boolean matches(int[] freq1, int[] freq2) {
+        for (int i = 0; i < 26; i++) {
+            if (freq1[i] != freq2[i]) return false;
+        }
+        return true;
     }
 }
