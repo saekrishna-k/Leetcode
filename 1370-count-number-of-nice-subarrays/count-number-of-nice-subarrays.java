@@ -26,14 +26,14 @@ class Solution {
 
         for (int right = 0; right < nums.length; right++) {
 
-            if (nums[right] % 2 != 0) { // if it's an odd number
+            if (nums[right] % 2 == 1) { // if it's an odd number
                 oddcount++; // increase odd count
                 count = 0; // reset count — we are starting a new group of valid subarrays
             }
 
             // when we find exactly k odd numbers in the window
             while (oddcount == k) {
-                if (nums[left] % 2 != 0) {
+                if (nums[left] % 2 == 1) {
                     oddcount--; // we will remove one odd from the left
                 }
                 count++; // count how many valid left positions give exactly k odds
