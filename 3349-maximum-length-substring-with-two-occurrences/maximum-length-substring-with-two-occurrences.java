@@ -7,7 +7,6 @@ class Solution {
             freq[c - 'a']++;
             if (freq[c - 'a'] <= 2) {
                 max = Math.max(max, right - left + 1);
-                continue;
             }
             while (freq[c - 'a'] > 2) {
                 freq[s.charAt(left) - 'a']--;
