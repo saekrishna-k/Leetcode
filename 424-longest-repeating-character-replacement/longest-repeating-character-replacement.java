@@ -7,12 +7,11 @@ class Solution {
             freq[c - 'A']++;
             maxRepeatChar = Math.max(maxRepeatChar, freq[c - 'A']);
 
-            while ((right - left + 1) - maxRepeatChar > k) {
+            if ((right - left + 1) - maxRepeatChar > k) {
                 char leftChar = s.charAt(left);
                 freq[leftChar - 'A']--;
                 left++;
             }
-
             result = Math.max(result, right - left + 1);
         }
         return result;
