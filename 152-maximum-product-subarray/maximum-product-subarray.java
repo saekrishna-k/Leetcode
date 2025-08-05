@@ -18,9 +18,13 @@ class Solution {
         for (int i = 1; i < l; i++) {
             int num = nums[i];
             if (num < 0) {
-                max = max + min;
-                min = max - min;
-                max = max - min;
+                // max = max + min;
+                // min = max - min;
+                // max = max - min;
+
+                max = max ^ min;
+                min = max ^ min;
+                max = max ^ min;
             }
 
             max = Math.max(num, max * num);
