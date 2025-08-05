@@ -15,8 +15,6 @@ class Solution {
         // }
         // return a;
 
-
-
         // for(int i=0;i<nums.length;i++){
         //     for(int j=i+1;j<nums.length;j++)
         //     {
@@ -29,12 +27,11 @@ class Solution {
         //  throw new IllegalArgumentException("No two sum solution");
 
 
-
         Map<Integer, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            int result = target - nums[i];
-            if (hashMap.containsKey(result)) {
-                return new int[] { hashMap.get(result), i };
+            int num = target - nums[i];
+            if (hashMap.containsKey(num)) {
+                return new int[] { hashMap.get(num), i };
             }
             hashMap.put(nums[i], i);
         }
