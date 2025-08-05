@@ -32,7 +32,7 @@ class Solution {
             return s;
         }
         String maxStr = "";
-        for (int i = 0; i < s.length() - 1; i++) {
+        for (int i = 0; i < s.length(); i++) {
             String odd = expandFromCenter(s, i, i);
             String even = expandFromCenter(s, i, i + 1);
 
