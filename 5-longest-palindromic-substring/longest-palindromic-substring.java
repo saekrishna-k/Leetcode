@@ -31,7 +31,7 @@ class Solution {
         if (l <= 1) {
             return s;
         }
-        String maxStr = s.substring(0, 1);
+        String maxStr = "";
         for (int i = 0; i < s.length() - 1; i++) {
             String odd = expandFromCenter(s, i, i);
             String even = expandFromCenter(s, i, i + 1);
