@@ -18,7 +18,6 @@ class Solution {
             return 1;
         }
 
-        String str = s.substring(0, 1);
         for (int i = 0; i < l; i++) {
             expand(s, i, i);
             expand(s, i, i + 1);
