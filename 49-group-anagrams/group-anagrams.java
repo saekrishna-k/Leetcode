@@ -5,11 +5,13 @@ class Solution {
         Map<String, List<String>> hm = new HashMap<>();
 
         for(String s : strs){
-            char freq[] = new char[26];
+            //char freq[] = new char[26];
+            int freq[] = new int[26];
             for(char c : s.toCharArray()){
                 freq[c - 'a']++;
             }
-            String key = String.valueOf(freq);
+            //String key = String.valueOf(freq);
+            String key = Arrays.toString(freq);
             if(!hm.containsKey(key)){
                 hm.put(key, new ArrayList<>());
             }
