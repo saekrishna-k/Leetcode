@@ -21,13 +21,24 @@ class Solution {
         // }
         // return  max - min;
 
-        int maxCur = 0;
-        int maxSoFar = 0;
-        for (int i = 1; i < prices.length; i++) {
-            int profitToday = prices[i] - prices[i - 1];
-            maxCur = Math.max(0, maxCur + profitToday);
-            maxSoFar = Math.max(maxSoFar, maxCur);
+        // int maxCur = 0;
+        // int maxSoFar = 0;
+        // for (int i = 1; i < prices.length; i++) {
+        //     int profitToday = prices[i] - prices[i - 1];
+        //     maxCur = Math.max(0, maxCur + profitToday);
+        //     maxSoFar = Math.max(maxSoFar, maxCur);
+        // }
+        // return maxSoFar;
+
+        int max = 0;
+        int left = 0;
+        for (int right = 1; right < prices.length; right++) {
+            if (prices[right] > prices[left]) {
+                max = Math.max(max, prices[right] - prices[left]);
+            } else {
+                left = right;
+            }
         }
-        return maxSoFar;
+        return max;
     }
 }
