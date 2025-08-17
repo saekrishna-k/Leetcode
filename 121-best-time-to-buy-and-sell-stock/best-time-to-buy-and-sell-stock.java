@@ -31,7 +31,7 @@ class Solution {
         // return maxSoFar;
 
         int max = 0;
-        int left = 0;
+        int left = 0;// left - buy, right - sell
         for (int right = 1; right < prices.length; right++) {
             if (prices[right] > prices[left]) {
                 max = Math.max(max, prices[right] - prices[left]);
