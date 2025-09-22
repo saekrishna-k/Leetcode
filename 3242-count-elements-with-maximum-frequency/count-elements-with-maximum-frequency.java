@@ -1,6 +1,7 @@
 class Solution {
 
     public int maxFrequencyElements(int[] nums) {
+
         int maxNum = Integer.MIN_VALUE;
         for (int num : nums) {
             if (num > maxNum) maxNum = num;
