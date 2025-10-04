@@ -23,7 +23,6 @@ class Solution {
         while (left < right) {
             int aera = Math.min(height[left], height[right]) * (right - left);
             maxAera = Math.max(maxAera, aera);
-
             if (height[left] < height[right]) {
                 left++;
             } else {
