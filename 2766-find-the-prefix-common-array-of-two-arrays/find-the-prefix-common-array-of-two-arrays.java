@@ -6,8 +6,17 @@ class Solution {
         int count = 0;
         int sol[] = new int[len];
         for (int i = 0; i < len; i++) {
-            if (++freq[A[i]] == 2) count++;
-            if (++freq[B[i]] == 2) count++;
+            // if (++freq[A[i]] == 2) count++;
+            // if (++freq[B[i]] == 2) count++;
+
+            freq[A[i]]++;
+            if(freq[A[i]] == 2){
+                count++;
+            }
+            freq[B[i]]++;
+            if(freq[B[i]] == 2){
+                count++;
+            }
             sol[i] = count;
         }
         return sol;
