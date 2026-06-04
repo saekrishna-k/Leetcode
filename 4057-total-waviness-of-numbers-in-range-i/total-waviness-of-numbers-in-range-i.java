@@ -2,20 +2,18 @@ class Solution {
 
     public int m1(int num) {
         int count = 0;
-        int first = -1, second = -1, third = -1;
+        int last = num % 10;
+        num /= 10;
+        int curr = num % 10, next;
+        num /= 10;
         while (num > 0) {
-            third = second;
-            second = first;
-            first = num % 10;
-            if (second != -1 && third != -1) {
-                if (first > second && second < third) {
-                    count++;
-                }
-                if (first < second && second > third) {
-                    count++;
-                }
-            }
+            next = num % 10;
             num /= 10;
+            if ((curr > last && curr > next) || (curr < last && curr < next)) {
+                count++;
+            }
+            last = curr;
+            curr = next;
         }
         return count;
     }
