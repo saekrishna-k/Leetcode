@@ -1,0 +1,23 @@
+class Solution {
+    public String processStr(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            switch (c) {
+                case '#':
+                    sb.append(sb);
+                    break;
+                case '%':
+                    sb.reverse();
+                    break;
+                case '*':
+                    if (sb.length() > 0) sb.deleteCharAt(
+                    sb.length() - 1
+                );
+                    break;
+                default:
+                    sb.append(c);
+            }
+        }
+        return sb.toString();
+    }
+}
