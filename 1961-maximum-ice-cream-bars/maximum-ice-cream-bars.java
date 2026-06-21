@@ -12,18 +12,33 @@ class Solution {
 
 
 
-        int[] freq = new int[100001];
+        // int[] freq = new int[100001];
+        // for(int cost : costs){
+        //     freq[cost]++;
+        // }
+        // int count = 0;
+        // for(int cost = 1 ; cost <= 100000; cost++){
+        //  int canBuy = Math.min(freq[cost], coins / cost);
+        //     count += canBuy;
+        //     coins -= canBuy * cost;
+        // }
+        // return count;
+
+
+        int maxCost = 0;
+        for (int cost : costs) {
+            maxCost = Math.max(maxCost, cost);
+        }
+        int[] freq = new int[maxCost + 1];
         for(int cost : costs){
             freq[cost]++;
         }
-
         int count = 0;
-        for(int cost = 1 ; cost <= 100000; cost++){
+        for(int cost = 1 ; cost <= maxCost; cost++){
          int canBuy = Math.min(freq[cost], coins / cost);
             count += canBuy;
             coins -= canBuy * cost;
         }
-
         return count;
     }
 }
