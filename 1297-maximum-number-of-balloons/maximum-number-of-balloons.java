@@ -26,7 +26,10 @@ class Solution {
             }
         }
 
-        return Math.min(b, Math.min(a, Math.min(n, Math.min(l / 2, o / 2))));
+        l = l / 2;
+        o = o / 2;
+
+        return Math.min(b, Math.min(a, Math.min(l, Math.min(o, n))));
 
     }
 }
