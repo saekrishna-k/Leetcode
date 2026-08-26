@@ -12,7 +12,6 @@ class Solution {
             if (s.charAt(right) == '1')
                 ones++;
 
-            // Too many ones -> move left
             while (ones > k) {
                 if (s.charAt(left) == '1')
                     ones--;
@@ -20,10 +19,8 @@ class Solution {
                 left++;
             }
 
-            // We have exactly k ones
             if (ones == k) {
 
-                // Remove unnecessary leading zeros
                 while (left < right && s.charAt(left) == '0') {
                     left++;
                 }
