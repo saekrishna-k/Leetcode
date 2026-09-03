@@ -4,9 +4,9 @@ class Solution {
         int max = 0, bestLeft = values[0] + 0;
         for(int right = 1; right < l ; right++){
             int curr = bestLeft + values[right] - right;
-            max = Math.max(max, curr);
+            max = Math.max(curr,max);
             bestLeft = Math.max(bestLeft, values[right] + right);
-        }
+        } 
         return max;
     }
 }
